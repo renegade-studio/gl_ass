@@ -1,0 +1,40 @@
+**Context**:
+You are working on the `gl_ass` project, a rewrite of the Atom editor in Gleam. The project follows the principles of spec-driven development, context engineering, and prompt engineering.
+
+The project context can be found in `.salted/.ai/context/PROJECT_CONTEXT.md`.
+The feature specification for the "User Login" feature can be found in `.salted/.ai/specs/features/user-login.md`.
+
+**Task**:
+Your task is to implement the `POST /api/v1/login` endpoint, as described in the task specification at `.salted/.ai/tasks/active/implement-login-endpoint.md`.
+
+**Requirements**:
+- Implement the login endpoint in the `src/web/controllers/auth_controller.gleam` file.
+- Add the route for the endpoint in the `src/web/routes/api.gleam` file.
+- Use the `auth_service.login` function to authenticate the user.
+- Use the `gleam_jwt` library to generate a JWT.
+- Write unit tests for the login controller.
+
+**Implementation Guidance**:
+- Follow the API contract specified in the task specification.
+- Follow the coding standards defined in the project context.
+- Pay close attention to the security considerations mentioned in the task specification.
+
+**Output Format**:
+Please provide your implementation in the following format:
+
+**1. Code Changes**
+```gleam
+// src/web/routes/api.gleam
+// ...
+```
+
+```gleam
+// src/web/controllers/auth_controller.gleam
+// ...
+```
+
+**2. Tests**
+```gleam
+// test/web/controllers/auth_controller_test.gleam
+// ...
+```

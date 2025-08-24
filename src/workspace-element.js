@@ -410,7 +410,7 @@ class WorkspaceElement extends HTMLElement {
         }
       });
 
-    return paneViews[0];
+    return paneViews[0] || null;
   }
 
   boundingBoxForPaneView(paneView) {

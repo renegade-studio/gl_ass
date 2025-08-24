@@ -1,0 +1,18 @@
+name = "gl_ass"
+version = "1.0.0"
+
+# Fill out these fields if you intend to generate HTML documentation or publish
+# your project to the Hex package manager.
+#
+# description = ""
+# licences = ["Apache-2.0"]
+# repository = { type = "github", user = "username", repo = "project" }
+# links = [{ title = "Website", href = "https://example.com" }]
+
+[dependencies]
+gleam_stdlib = "~> 0.32"
+gleam_http = "~> 3.0"
+gleam_jwt = "~> 0.3"
+
+[dev-dependencies]
+gleeunit = "~> 0.10"
