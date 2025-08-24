@@ -1,0 +1,5 @@
+# This is a placeholder for the gleam_lint configuration.
+# We will add more rules here as the project progresses.
+
+[rules]
+# a_rule = "allow"

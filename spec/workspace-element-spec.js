@@ -137,7 +137,7 @@ describe('WorkspaceElement', () => {
             'above',
             pane2
           );
-          expect(nearestPaneElement).toBeUndefined(); // TODO Expect toBeNull()
+          expect(nearestPaneElement).toBeNull();
         });
       });
 
@@ -170,7 +170,7 @@ describe('WorkspaceElement', () => {
             'below',
             pane8
           );
-          expect(nearestPaneElement).toBeUndefined(); // TODO Expect toBeNull()
+          expect(nearestPaneElement).toBeNull();
         });
       });
 
@@ -205,7 +205,7 @@ describe('WorkspaceElement', () => {
             'left',
             pane4
           );
-          expect(nearestPaneElement).toBeUndefined(); // TODO Expect toBeNull()
+          expect(nearestPaneElement).toBeNull();
         });
       });
 
@@ -263,7 +263,7 @@ describe('WorkspaceElement', () => {
             'right',
             pane6
           );
-          expect(nearestPaneElement).toBeUndefined(); // TODO Expect toBeNull()
+          expect(nearestPaneElement).toBeNull();
         });
       });
 

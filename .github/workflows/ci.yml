@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Gleam
+      uses: gleam-lang/setup-gleam@v1
+      with:
+        gleam-version: '0.32.0'
+
+    - name: Install dependencies
+      run: gleam deps download
+
+    - name: Compile
+      run: gleam compile
+
+    - name: Run tests
+      run: gleam test
+
+    - name: Run linter
+      run: gleam run -m gleam_lint
