@@ -8,6 +8,12 @@
 - **Priority**: [High/Medium/Low]
 - **Estimated Effort**: [Time estimate]
 
+## Philosophical Considerations
+- **Symbiotic AI Core**: [How does this task contribute to the AI core?]
+- **Zero-Friction DX**: [How does this task contribute to a zero-friction developer experience?]
+- **Time-Shifted Collaboration**: [How does this task contribute to collaboration?]
+- **BEAM-Powered Reliability**: [How does this task leverage the BEAM for reliability?]
+
 ## Task Context
 ### Background
 [Why is this task needed? What's the context?]

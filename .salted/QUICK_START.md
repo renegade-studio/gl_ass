@@ -49,6 +49,20 @@ For each feature, create one or more task specifications in the `.salted/.ai/tas
 - **Implementation Details:** Specify the files to be modified and the code changes required.
 - **Quality Requirements:** Define the testing, performance, and security requirements for the task.
 
-## Step 6: Start Coding!
+## Step 6: Run Common Tasks
+
+The project includes a `Taskfile.yaml` file that provides a set of common tasks for developing the project. You can use the `task` command to run these tasks.
+
+To list all the available tasks, run:
+```bash
+task --list
+```
+
+To run a specific task, for example the `test` task, run:
+```bash
+task test
+```
+
+## Step 7: Start Coding!
 
 You are now ready to start coding. You can use the feature and task specifications to guide your work. You can also use the prompt templates in the `.salted/.ai/prompts/` directory to help you interact with AI coding agents.

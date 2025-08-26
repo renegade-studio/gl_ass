@@ -7,6 +7,9 @@
 - **Priority**: Medium
 - **Estimated Effort**: Medium
 
+## Alignment with Philosophy
+- **Pillar 2: Zero-Friction DX**: An integrated terminal is a key feature for a zero-friction developer experience, as it allows developers to run commands without having to switch to a separate terminal application.
+
 ## Business Context
 ### User Story
 **As a** developer
@@ -34,22 +37,30 @@
    - Output: The UI is updated to reflect the current set of terminal sessions.
 
 ## Technical Requirements
-(To be defined)
+- **Architecture**: The terminal integration will be implemented as a separate service that communicates with the core editor via the Model Context Protocol (MCP).
+- **Terminal Emulator**: A high-performance terminal emulator will be used to render the terminal view.
 
 ## Non-Functional Requirements
-(To be defined)
+- **Performance**: The integrated terminal should be fast and responsive.
+- **Reliability**: The integrated terminal should be reliable and not crash.
 
 ## Implementation Guidelines
-(To be defined)
+- The terminal service will be implemented as a Gleam application.
+- The terminal emulator will be implemented as a reusable UI component.
 
 ## Edge Cases and Error Scenarios
-(To be defined)
+- The terminal integration should handle shell crashes gracefully.
 
 ## Acceptance Criteria
-(To be defined)
+- A comprehensive test suite for the terminal service and the terminal emulator.
+- A successful integration of the terminal integration with the core editor.
 
 ## Dependencies and Constraints
-(To be defined)
+- The project will depend on a terminal emulator library.
 
 ## Rollout Strategy
-(To be defined)
+- **Phase 1:** The goal for Phase 1 is to achieve 1:1 parity with the terminal integration of the original Atom editor.
+- **Phase 2:** In Phase 2, we will focus on implementing advanced terminal features, such as split terminals and search.
+
+### Deprecation Plan
+- Not applicable.

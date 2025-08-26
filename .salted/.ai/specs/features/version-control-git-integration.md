@@ -7,6 +7,10 @@
 - **Priority**: High
 - **Estimated Effort**: Large
 
+## Alignment with Philosophy
+- **Pillar 2: Zero-Friction DX**: A seamless Git integration is essential for a zero-friction developer experience.
+- **Pillar 3: Time-Shifted Collaboration**: The Git integration will be designed to work seamlessly with the real-time collaboration features.
+
 ## Business Context
 ### User Story
 **As a** developer
@@ -39,22 +43,31 @@
    - Output: The Git repository is updated and the UI is updated to reflect the new state.
 
 ## Technical Requirements
-(To be defined)
+- **Architecture**: The Git integration will be implemented as a separate service that communicates with the core editor via the Model Context Protocol (MCP).
+- **Git Library**: A Gleam library for Git will be used to interact with Git repositories.
 
 ## Non-Functional Requirements
-(To be defined)
+- **Performance**: Git operations should be fast and non-blocking.
+- **Reliability**: The Git integration should be reliable and not corrupt the user's Git repository.
 
 ## Implementation Guidelines
-(To be defined)
+- The Git service will be implemented as a Gleam application.
+- The Git integration will be designed to be extensible, allowing new Git features to be added easily.
 
 ## Edge Cases and Error Scenarios
-(To be defined)
+- The Git integration should handle Git errors gracefully (e.g., merge conflicts).
+- The Git integration should handle large repositories efficiently.
 
 ## Acceptance Criteria
-(To be defined)
+- A comprehensive test suite for the Git service.
+- A successful integration of the Git service with the core editor.
 
 ## Dependencies and Constraints
-(To be defined)
+- The project will depend on a Gleam library for Git.
 
 ## Rollout Strategy
-(To be defined)
+- **Phase 1:** The goal for Phase 1 is to achieve 1:1 parity with the Git integration of the original Atom editor.
+- **Phase 2:** In Phase 2, we will focus on implementing advanced Git features, such as interactive rebase and a full-featured branch management UI.
+
+### Deprecation Plan
+- Not applicable.

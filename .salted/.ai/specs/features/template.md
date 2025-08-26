@@ -8,6 +8,12 @@
 - **Estimated Effort**: [Story points, hours, or complexity]
 - **Design Doc**: [Link to design document]
 
+## Alignment with Philosophy
+- **Pillar 1: Symbiotic AI Core**: [How this feature contributes to the AI core]
+- **Pillar 2: Zero-Friction DX**: [How this feature contributes to a zero-friction developer experience]
+- **Pillar 3: Time-Shifted Collaboration**: [How this feature contributes to collaboration]
+- **Pillar 4: BEAM-Powered Reliability**: [How this feature leverages the BEAM for reliability]
+
 ## Business Context
 ### User Story
 **As a** [type of user]

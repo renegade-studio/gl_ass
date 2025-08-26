@@ -7,6 +7,10 @@
 - **Priority**: High
 - **Estimated Effort**: Large
 
+## Alignment with Philosophy
+- **Pillar 2: Zero-Friction DX**: A high-performance, intuitive, and customizable UI is essential for a zero-friction developer experience.
+- **Pillar 4: BEAM-Powered Reliability**: The UI will be decoupled from the backend, ensuring that backend crashes do not affect the UI.
+
 ## Business Context
 ### User Story
 **As a** developer
@@ -42,7 +46,7 @@
 - **Architecture**: The UI will be web-based, rendered in a native web view. This will allow us to leverage the power and flexibility of modern web technologies.
 - **Web Framework**: A modern web framework like React, Vue, or Svelte will be used to build the UI. The choice of framework will be made based on a separate evaluation.
 - **Web View Library**: A lightweight web view library will be used to host the web-based UI. The choice of library will be made based on a separate evaluation.
-- **Communication**: The UI layer will communicate with the Gleam backend via a well-defined API (e.g., using WebSockets or a custom RPC protocol).
+- **Communication**: The UI layer will communicate with the Gleam backend via the Model Context Protocol (MCP).
 - **Rendering Engine**: The rendering of the UI will be GPU-accelerated by the underlying web view library.
 
 ## Non-Functional Requirements
@@ -69,5 +73,8 @@
 - The choice of web framework and web view library will have a significant impact on the project.
 
 ## Rollout Strategy
-- The UI layer will be developed and tested in isolation before being integrated with the rest of the editor.
-- The UI components will be developed and tested one by one.
+- **Phase 1:** The goal for Phase 1 is to achieve 1:1 parity with the UI layer of the original Atom editor. This includes all the core UI components, such as the editor view, tabs, status bar, tree view, and command palette.
+- **Phase 2:** In Phase 2, we will focus on implementing the advanced UI features of the `gl_ass` vision, such as the focus-aware UI.
+
+### Deprecation Plan
+- Not applicable.

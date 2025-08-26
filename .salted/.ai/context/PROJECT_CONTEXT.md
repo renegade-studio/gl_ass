@@ -1,182 +1,141 @@
-# Project Context Template
+# Project Context: gl_ass
 
-## Project Identity
-- **Project Name**: gl_ass (Atom Rewrite in Gleam)
+## 1. Project Identity
+- **Project Name**: `gl_ass` (A Reborn Atom Editor)
 - **Version**: 1.0.0
 - **Repository**: [Git repository URL]
 - **Primary Language**: Gleam
-- **Last Updated**: 2025-08-24
+- **Last Updated**: 2025-08-26
 
-## Google's Software Engineering Philosophy
-This project will be guided by the software engineering principles and practices outlined in the Google SWE book. The following are the key principles that will guide the development of the `gl_ass` project:
+## 2. Core Philosophy
+The development of `gl_ass` is guided by four core pillars, detailed in the `PHILOSOPHY.md` document. These principles must inform all design and development decisions.
 
-- **Programming Over Time:** The codebase will be designed to be maintainable and adaptable over the long term. We will prioritize code that is easy to understand, easy to change, and easy to delete.
-- **Scale and Efficiency:** The development process will be designed to scale to a large number of engineers and a large codebase. We will use automation and tooling to improve efficiency and reduce toil.
-- **Trade-offs and Costs:** All decisions will be made with a clear understanding of the trade-offs and costs involved. We will strive to make data-driven decisions and to be transparent about the rationale behind our choices.
-- **Teamwork and Collaboration:** The project will foster a culture of teamwork, collaboration, and psychological safety. We will encourage open communication, constructive feedback, and mutual respect.
-- **Knowledge Sharing:** The project will have a strong emphasis on knowledge sharing through documentation, code reviews, and mentorship. We believe that everyone has something to teach and something to learn.
-- **Testing:** The project will have a comprehensive testing strategy, including unit tests, integration tests, and end-to-end tests. We will follow the "Test, Commit, and Revert" (TCR) philosophy, where every change is tested before it is committed.
-- **Continuous Integration and Delivery:** The project will use CI/CD to automate the build, test, and deployment process. We will strive for a fast and reliable release pipeline.
+-   **Pillar 1: The "Symbiotic" AI Core:** The AI is the central nervous system of the IDE, enabling deep codebase intelligence, agentic workflows, and proactive debugging.
+-   **Pillar 2: A "Zero-Friction" Developer Experience:** The IDE should be instantaneous, intuitive, and disappear into the background through zero-configuration, integrated learning, and a focus-aware UI.
+-   **Pillar 3: "Time-Shifted" Collaboration:** Collaboration is both synchronous and asynchronous, supported by persistent in-code conversations and integrated task management.
+-   **Pillar 4: "BEAM-Powered" Unbreakable Reliability:** Leveraging Gleam and the Erlang VM to build a fundamentally reliable, fault-tolerant, and massively concurrent editor.
 
-## Business Overview
+## 3. Implementation Strategy
+The development of `gl_ass` will be done in two phases:
+
+- **Phase 1: 1:1 Parity with Atom.** The first phase will focus on creating a feature-complete clone of the original Atom editor in Gleam. This will involve a complete rewrite of the editor from scratch, with no JavaScript code. The goal is to achieve 1:1 parity with Atom's features and functionality.
+- **Phase 2: The `gl_ass` Vision.** The second phase will focus on implementing the advanced features that will make `gl_ass` the "last editor needed for todays development". This includes the "Symbiotic" AI Core, "Time-Shifted" Collaboration, and other features that are not available in Atom.
+
+## 4. Business Overview
 ### Purpose
-Atom is a hackable text editor for the 21st century, built on modern technologies. It is designed to be deeply customizable, but still approachable using the default configuration. This project is a rewrite of the original Atom editor in the Gleam programming language, with the goal of creating a more modern, reliable, and performant text editor.
+`gl_ass` is a "final" text editor for modern development, designed to be the last editor a developer will ever need. It is a complete rewrite of the original Atom editor, built from the ground up in Gleam to be a hyper-performant, AI-native, and collaborative tool for the 21st century.
 
 ### Target Users
-- **Primary**: Developers who need a highly customizable and extensible text editor for coding.
-- **Secondary**: Writers, students, and anyone who needs a powerful and flexible text editor for writing and note-taking.
-- **Admin/Internal**: Not applicable.
+- **Primary**: Professional developers who demand performance, intelligence, and a seamless workflow.
+- **Secondary**: Open-source contributors, students, and writers who need a powerful and flexible tool.
 
 ### Success Metrics
-- [Key performance indicator 1]
-- [Key performance indicator 2]
-- [Key performance indicator 3]
+- **AI Symbiosis:**
+    - Percentage of complex tasks (e.g., feature implementation, complex bug fixes) successfully delegated to and completed by AI agents.
+    - Time-to-resolution for deep codebase questions answered by the AI.
+- **Developer Experience:**
+    - Time from project-open to "ready-to-code" is less than 5 seconds for any project.
+    - User-reported "perceptible lag" events per session approaches zero.
+- **Collaboration:**
+    - Adoption rate of in-code conversation and task-tracking features.
+    - Time saved by teams using real-time and asynchronous collaboration features.
+- **Reliability:**
+    - Number of editor crashes is zero, even when plugins or language servers fail.
+    - UI responsiveness remains constant regardless of the number of background tasks.
 
-## Technical Architecture
+## 5. Technical Architecture
 ### System Architecture
-Atom has a modular architecture. It consists of a lean core and a large number of packages that provide additional functionality. Even core features like the tree view and the settings view are implemented as packages. This makes the editor highly extensible and customizable.
+The architecture of `gl_ass` is designed to support our core philosophy. It is a modular, distributed system built on the Erlang/OTP runtime.
 
-The editor is built on the Electron framework, which allows it to run on different operating systems using web technologies.
-
-The rewrite in Gleam will follow a similar modular architecture, with a core editor and a set of packages. However, it will be built on the Erlang/OTP runtime, which will provide a more robust and scalable foundation. The architecture will follow the principles of Self-contained systems, MVVM + Hexagonal Architecture, and the 12 Factor App methodology. Communication between components will be handled by gleamrpc (a combination of Erlang and gRPC).
+- **Core Principles:** The architecture adheres to the principles of Self-contained systems, MVVM (Model-View-ViewModel) for the UI, Hexagonal Architecture for the backend, and the 12-Factor App methodology.
+- **Model Context Protocol (MCP):** All communication between components will be handled by the Model Context Protocol (MCP), a real-time, bidirectional protocol for sharing and synchronizing state and context. The MCP is defined in the `specs/MODEL_CONTEXT_PROTOCOL.md` document.
+- **AI Core Integration:** The AI Core is a first-class citizen, with deep hooks into the editor engine and other components.
+- **Fault Tolerance:** The BEAM's process isolation is leveraged to ensure that failures in one component (e.g., a plugin) do not affect the rest of the system.
 
 ### Technology Stack
-- **Original Atom**:
-  - **Frontend**: JavaScript, CoffeeScript, Less, HTML
-  - **Backend**: Node.js (via Electron)
-  - **Framework**: Electron
-- **Atom Rewrite**:
-  - **Frontend**: (To be determined, likely a web framework that can be rendered in a native web view)
-  - **Backend**: Gleam, Erlang/OTP
-  - **Framework**: (To be determined, will be based on the Erlang/OTP ecosystem)
+- **Backend**: Gleam, Erlang/OTP
+- **Frontend**: Web-based UI (React/Vue/Svelte TBD) rendered in a native web view.
+- **Communication**: `gleamrpc` (gRPC over Erlang distribution) for the MCP.
+- **Text Engine**: Custom-built rope data structure for efficient text manipulation.
+- **Syntax Highlighting**: Tree-sitter.
 
 ### Key Design Decisions
-1. **[Decision 1]**: [Rationale and implications]
-2. **[Decision 2]**: [Rationale and implications]
-3. **[Decision 3]**: [Rationale and implications]
+1. **Gleam on the BEAM:** Chosen for its type safety, concurrency, and fault tolerance, which are essential for achieving our reliability and performance goals.
+2. **Web-Based UI:** Chosen for its flexibility, cross-platform compatibility, and access to a rich ecosystem of UI components and development tools.
+3. **AI-Native Architecture:** The AI is not an add-on; the system is designed from the ground up to support deep AI integration.
+4. **Spec-Driven Development:** All development is guided by the `.salted` framework to ensure clarity, consistency, and a high level of automation.
 
-## Development Standards
+## 6. Development Standards
 ### Code Style
-- **JavaScript**: The JavaScript code in the original Atom project follows the "Standard" style, with some modifications from Prettier. The configuration can be found in the `.eslintrc.json` file.
-- **CoffeeScript**: The CoffeeScript code follows the rules defined in the `coffeelint.json` file. This includes rules like `no_empty_param_list`, `arrow_spacing`, and `prefer_english_operator`.
-- **Gleam**: The Gleam code in the rewrite will follow the official Gleam style guide.
+- **Gleam**: The official Gleam style guide will be enforced by the default Gleam formatter (`gleam format`).
+- **Other Languages**: Industry-standard style guides (e.g., StandardJS for JavaScript) will be used.
 
 ### Testing Requirements
-- **Unit Tests**: The original Atom project uses Jasmine for unit testing. The rewrite will also use a unit testing framework suitable for Gleam.
-- **Integration Tests**: [Strategy and tools]
-- **End-to-End Tests**: [Framework and critical paths]
-- **Minimum Coverage**: [Percentage requirement]
+- **Philosophy:** We follow the "Test, Commit, and Revert" (TCR) philosophy. Every change must be tested.
+- **Unit Tests:** All public functions must have unit tests.
+- **Integration Tests:** All major components must have integration tests.
+- **End-to-End Tests:** Critical user workflows will be covered by end-to-end tests.
+- **Minimum Coverage:** A minimum of 90% test coverage is required for all new code.
 
 ### Security Guidelines
-- **Authentication**: [Method and implementation details]
-- **Authorization**: [RBAC, ABAC, etc.]
-- **Data Protection**: [Encryption, PII handling]
-- **Input Validation**: [Strategy and tools]
+- **Authentication**: All user-facing services must have robust authentication.
+- **Authorization**: All actions must be authorized.
+- **Data Protection**: All sensitive data must be encrypted at rest and in transit.
+- **Input Validation**: All input from external sources must be validated.
 
-## Current State
+## 7. Current State
 ### Completed Features
-The original Atom editor has a rich feature set, provided by a large number of packages. The following is a non-exhaustive list of the most important features:
-- **About page**: Shows information about the editor.
-- **Autoflow**: Formats text.
-- **Bookmarks**: Mark lines and jump to them.
-- **Bracket-matcher**: Highlights matching brackets.
-- **Command-palette**: Find and run available commands.
-- **Deprecation-cop**: Helps developers to find and fix deprecated API usage.
-- **Dev-live-reload**: Reloads the editor when files change.
-- **Encoding-selector**: Select the file encoding.
-- **Exception-reporting**: Reports uncaught exceptions.
-- **Find-and-replace**: Find and replace text.
-- **Fuzzy-finder**: Quickly open files.
-- **Git-diff**: Shows git diffs in the editor.
-- **Go-to-line**: Jump to a specific line.
-- **Grammar-selector**: Select the grammar for the current file.
-- **Incompatible-packages**: Shows a list of incompatible packages.
-- **Line-ending-selector**: Select the line ending for the current file.
-- **Link**: Open links in the editor.
-- **Markdown-preview**: Preview markdown files.
-- **Notifications**: Shows notifications.
-- **Open-on-github**: Open the current file on GitHub.
-- **Package-generator**: Generates a new package.
-- **Settings-view**: The settings view.
-- **Snippets**: Insert code snippets.
-- **Spell-check**: Spell checker.
-- **Status-bar**: The status bar at the bottom of the editor.
-- **Styleguide**: A styleguide for UI components.
-- **Symbols-view**: View and jump to symbols in a file.
-- **Tabs**: The tabs for open editors.
-- **Timecop**: A tool for debugging performance issues.
-- **Tree-view**: The file tree view on the left side of the editor.
-- **Update-package-dependencies**: Updates package dependencies.
-- **Welcome**: The welcome screen.
-- **Whitespace**: Shows and removes whitespace.
-- **Wrap-guide**: Shows a wrap guide in the editor.
+- The `.salted` framework for spec-driven development has been created.
+- The core philosophy and principles for the `gl_ass` project have been defined.
 
 ### Known Issues
-- **High Priority**:
-  - The `fs-admin` package fails to build with modern versions of Node.js.
-  - The build process requires an older version of Python (e.g., 3.8) to work correctly.
-  - The build process requires the `libsecret-1-dev` package to be installed on Linux.
-  - The build process requires internet access to download dependencies from GitHub.
-- **Medium Priority**:
-  - There are several areas in the codebase that need refactoring, such as the use of deprecated APIs and the need to remove conditional logic once new APIs are stable.
-  - Some parts of the code are not language-specific and could be improved to be more language-aware.
-  - There are some pending tests that need to be implemented.
-  - The update manager could be improved to support canceling update downloads.
-  - The `autoflow` package could be improved to be more language-specific.
-  - The theme manager could be improved to list all available themes.
-- **Technical Debt**:
-  - The project has a large number of outdated dependencies.
-  - There are many "TODO" and "FIXME" comments scattered throughout the codebase that need to be addressed.
-  - Some parts of the code are written in CoffeeScript, which is a deprecated language. The rewrite to Gleam will address this.
+- The project is in its initial planning and design phase. There are no known implementation issues at this time.
 
 ### Upcoming Priorities
-1. [Next sprint/iteration priorities]
-2. [Medium-term roadmap items]
-3. [Long-term vision items]
+1.  Achieve 1:1 feature parity with the original Atom editor (Phase 1).
+2.  Finalize the choice of web framework for the UI.
+3.  Implement the custom rope data structure for the core editor engine.
+4.  Develop the Gleam wrapper for the Tree-sitter library.
 
-## Domain Knowledge
-### Business Rules
-1. **[Rule 1]**: [Description and implications]
-2. **[Rule 2]**: [Description and implications]
-3. **[Rule 3]**: [Description and implications]
+## 8. Domain Knowledge
+### Domain-Specific Language (DSL)
+- **Buffer:** A data structure that holds the text of a file.
+- **Cursor:** A pointer that indicates the current position in a buffer.
+- **Selection:** A range of text that is selected by the user.
+- **Marker:** A persistent marker that can be used to track a position in a buffer.
+- **Pane:** A container for one or more views.
+- **View:** A visual representation of a buffer.
+- **Gutter:** The area to the left of the editor that displays line numbers and other information.
+- **Token:** A piece of text with a specific meaning.
+- **Scope:** A set of tokens that have a common meaning.
+- **Grammar:** A set of rules that defines the syntax of a language.
+- **Theme:** A set of colors and styles that defines the look and feel of the editor.
+- **Package:** A bundle of code that extends the functionality of the editor.
 
-### Data Model Overview
-```
-[Key entities and relationships]
-User (1) ──── (M) Order
-Order (1) ──── (M) OrderItem
-OrderItem (M) ──── (1) Product
-```
-
-### External Dependencies
-- **[Service 1]**: [Purpose, API details, constraints]
-- **[Service 2]**: [Purpose, API details, constraints]
-- **[Service 3]**: [Purpose, API details, constraints]
-
-## Development Environment
+## 9. Development Environment
 ### Setup Requirements
 - **Language version requirements**: Gleam, Erlang/OTP
-- **Database setup instructions**: [Database setup instructions]
-- **Environment variables needed**: [Environment variables needed]
-- **Third-party service credentials**: [Third-party service credentials]
+- **Database setup instructions**: [To be defined]
+- **Environment variables needed**: [To be defined]
+- **Third-party service credentials**: [To be defined]
 
 ### Local Development
-```bash
-# Setup commands
-[command 1]
-[command 2]
-[command 3]
+The project includes a `Taskfile.yaml` file that provides a set of common tasks for developing the project. You can use the `task` command to run these tasks.
 
-# Run commands
-[development server command]
-[test command]
-[build command]
+To list all the available tasks, run:
+```bash
+task --list
+```
+
+To run a specific task, for example the `test` task, run:
+```bash
+task test
 ```
 
 ### Deployment Pipeline
-- **Staging**: [URL, deployment process]
-- **Production**: [URL, deployment process]
-- **Rollback**: [Emergency rollback procedure]
+- **Staging**: [To be defined]
+- **Production**: [To be defined]
+- **Rollback**: [To be defined]
 
 ---
 *Update this context regularly as the project evolves*
