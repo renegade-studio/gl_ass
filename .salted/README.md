@@ -6,7 +6,11 @@ Welcome to the `.salted` framework, a comprehensive set of templates and workflo
 
 This framework is built on the principles of **Context Engineering**, **Specification-Driven Development**, and **Prompt Engineering**. The core idea is to structure all project information in a way that is easily consumable by both human developers and AI coding agents, enabling seamless collaboration and high-quality, automated development.
 
-It is inspired by Google's best practices for software engineering to ensure robustness, scalability, and maintainability.
+The philosophy for the `gl_ass` project, which is being built with this framework, is detailed in the `PHILOSOPHY.md` file. It is based on four pillars:
+1.  **A 'Symbiotic' AI Core**
+2.  **A 'Zero-Friction' Developer Experience**
+3.  **'Time-Shifted' Collaboration**
+4.  **'BEAM-Powered' Unbreakable Reliability**
 
 ## Purpose
 

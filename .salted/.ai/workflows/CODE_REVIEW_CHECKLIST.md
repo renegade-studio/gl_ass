@@ -7,6 +7,12 @@
 - **Feature/Task**: [Related feature or task]
 - **Review Date**: [Date of review]
 
+## Philosophical Review
+- [ ] **Symbiotic AI Core**: Does this change align with our AI-native philosophy? Does it make it easier for AI agents to understand and work with our codebase?
+- [ ] **Zero-Friction DX**: Does this change contribute to a seamless and intuitive developer experience? Does it reduce friction or add to it?
+- [ ] **Time-Shifted Collaboration**: Does this change improve our ability to collaborate, either in real-time or asynchronously?
+- [ ] **BEAM-Powered Reliability**: Does this change leverage the power of the BEAM to improve the reliability and fault-tolerance of our system?
+
 ## Google's Code Review Best Practices
 This checklist is based on the best practices outlined in the Google SWE book.
 

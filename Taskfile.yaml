@@ -1,0 +1,37 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: "Install Gleam dependencies"
+    cmds:
+      - gleam deps download
+
+  test:
+    desc: "Run the test suite"
+    cmds:
+      - gleam test
+
+  lint:
+    desc: "Run the linter"
+    cmds:
+      - gleam run -m gleam_lint
+
+  format:
+    desc: "Format the code"
+    cmds:
+      - gleam format
+
+  build:
+    desc: "Compile the project"
+    cmds:
+      - gleam compile
+
+  run:
+    desc: "Run the application"
+    cmds:
+      - gleam run
+
+  test:parity:
+    desc: "Run the parity tests to verify 1:1 feature parity with Atom"
+    cmds:
+      - echo "Parity tests not yet implemented."

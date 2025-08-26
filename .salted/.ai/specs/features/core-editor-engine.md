@@ -7,6 +7,12 @@
 - **Priority**: High
 - **Estimated Effort**: Large
 
+## Alignment with Philosophy
+- **Pillar 1: Symbiotic AI Core**: A high-performance core editor engine is a prerequisite for a responsive AI experience.
+- **Pillar 2: Zero-Friction DX**: The performance and reliability of the core editor engine are critical for a zero-friction developer experience.
+- **Pillar 3: Time-Shifted Collaboration**: The core editor engine must be designed to support real-time collaboration.
+- **Pillar 4: BEAM-Powered Reliability**: The core editor engine will be built on the BEAM to ensure maximum reliability and fault-tolerance.
+
 ## Business Context
 ### User Story
 **As a** developer
@@ -55,9 +61,20 @@
 - **Scalability**: The editor engine should be able to handle files of any size, limited only by the available memory.
 
 ## Implementation Guidelines
+### Architecture Patterns
+- The core editor engine will be implemented as a self-contained system.
 - The rope data structure will be implemented as a persistent data structure to allow for efficient undo/redo functionality.
-- A Gleam wrapper for the Tree-sitter library will be implemented as a NIF (Native Implemented Function) to allow Gleam to call the C-based Tree-sitter library.
+- The Tree-sitter wrapper will be implemented as a NIF (Native Implemented Function) to allow Gleam to call the C-based Tree-sitter library.
 - The API will be designed with a focus on performance and ease of use.
+
+### Test Plan
+- **Unit Tests**:
+  - A comprehensive test suite for the rope data structure.
+  - Unit tests for all public functions in the core editor engine.
+- **Integration Tests**:
+  - Integration tests for the core editor engine and the UI layer.
+- **Benchmarks**:
+  - A set of benchmarks to measure the performance of the editor engine.
 
 ## Edge Cases and Error Scenarios
 - The editor should handle files with very long lines gracefully.
@@ -65,14 +82,18 @@
 - The editor should handle out-of-memory errors gracefully.
 
 ## Acceptance Criteria
-- A comprehensive test suite for the rope data structure and the core editor engine.
-- A set of benchmarks to measure the performance of the editor engine.
-- A successful integration of the core editor engine with the UI layer.
+### Definition of Done
+- [ ] The core editor engine is implemented and tested.
+- [ ] The core editor engine meets the performance targets.
+- [ ] The core editor engine is successfully integrated with the UI layer.
 
 ## Dependencies and Constraints
 - The project will depend on the Tree-sitter library and the `tree-sitter-gleam` grammar.
 - The implementation of the rope data structure and the Tree-sitter wrapper will be a significant undertaking and will require careful design and implementation.
 
 ## Rollout Strategy
-- The core editor engine will be developed and tested in isolation before being integrated with the rest of the editor.
-- The rope data structure will be developed and tested separately before being integrated into the core editor engine.
+- **Phase 1:** The goal for Phase 1 is to achieve 1:1 parity with the core editor engine of the original Atom editor. This includes features like text storage, editing operations, syntax highlighting, and undo/redo.
+- **Phase 2:** In Phase 2, we will focus on implementing the advanced features of the `gl_ass` vision, such as the "Symbiotic" AI Core.
+
+### Deprecation Plan
+- Not applicable.

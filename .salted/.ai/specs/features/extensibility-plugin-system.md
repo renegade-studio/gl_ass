@@ -7,6 +7,11 @@
 - **Priority**: High
 - **Estimated Effort**: Large
 
+## Alignment with Philosophy
+- **Pillar 1: Symbiotic AI Core**: The plugin system will be designed to allow AI agents to be implemented as plugins.
+- **Pillar 2: Zero-Friction DX**: A powerful and easy-to-use plugin system is essential for a zero-friction developer experience.
+- **Pillar 4: BEAM-Powered Reliability**: Plugins will be run in separate processes, preventing them from crashing the editor.
+
 ## Business Context
 ### User Story
 **As a** developer
@@ -35,26 +40,36 @@
    - Output: The user's set of installed plugins is updated.
 3. **Plugin Isolation**:
    - Input: A mechanism for isolating plugins from each other and from the core editor.
-   - Processing: Run plugins in a sandboxed environment to prevent them from interfering with each other or with the core editor.
+   - Processing: Run plugins in separate processes to prevent them from interfering with each other or with the core editor.
    - Output: The editor remains stable and performant even with a large number of plugins installed.
 
 ## Technical Requirements
-(To be defined)
+- **Architecture**: Plugins will be implemented as separate processes that communicate with the core editor via the Model Context Protocol (MCP). Each plugin will run as an MCP server.
+- **Plugin API**: The Plugin API will be defined as a set of MCP services and messages.
+- **Sandboxing**: Plugins will be run in a sandboxed environment to prevent them from accessing the user's system without permission.
 
 ## Non-Functional Requirements
-(To be defined)
+- **Performance**: The plugin system should have a low overhead and not degrade the performance of the editor.
+- **Security**: The plugin system should be secure and protect users from malicious plugins.
 
 ## Implementation Guidelines
-(To be defined)
+- The plugin host will be implemented as a Gleam application that is responsible for managing the lifecycle of plugins.
+- The Plugin API will be designed to be easy to use and well-documented.
 
 ## Edge Cases and Error Scenarios
-(To be defined)
+- The plugin host should handle plugin crashes gracefully.
+- The plugin host should handle slow or unresponsive plugins gracefully.
 
 ## Acceptance Criteria
-(To be defined)
+- A comprehensive test suite for the plugin host and the Plugin API.
+- A successful integration of the plugin system with the core editor.
 
 ## Dependencies and Constraints
-(To be defined)
+- The project will depend on the Model Context Protocol (MCP).
 
 ## Rollout Strategy
-(To be defined)
+- **Phase 1:** The goal for Phase 1 is to achieve 1:1 parity with the plugin system of the original Atom editor. This includes the ability to create, publish, install, and manage plugins.
+- **Phase 2:** In Phase 2, we will focus on implementing advanced plugin features, such as a more sophisticated sandboxing model and a richer Plugin API.
+
+### Deprecation Plan
+- Not applicable.
